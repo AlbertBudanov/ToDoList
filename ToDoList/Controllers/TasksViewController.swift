@@ -9,7 +9,7 @@ import UIKit
 import Firebase
 
 class TasksViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
-    @IBOutlet weak var addTapped: UIBarButtonItem!
+    
     @IBOutlet weak var tableView: UITableView!
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -28,6 +28,24 @@ class TasksViewController: UIViewController, UITableViewDataSource, UITableViewD
     override func viewDidLoad() {
         super.viewDidLoad()
 
+    }
+    
+    @IBAction func addTapped(_ sender: UIBarButtonItem) {
+        let alertController = UIAlertController(title: "New task", message: "Add new task", preferredStyle: .alert)
+        alertController.addTextField()
+        let save = UIAlertAction(title: "Save", style: .default) { _ in
+            guard let textField = alertController.textFields?.first,
+                  textField.text != "" else { return } }
+            
+//            let task
+//            taskRef
+//            task
+            let cancel = UIAlertAction(title: "Cansel", style: .default, handler: nil)
+            alertController.addAction(save)
+        alertController.addAction(cancel)
+            
+            
+        present(alertController, animated: true, completion: nil)
     }
     
     @IBAction func sugnOutTapped(_ sender: UIBarButtonItem) {

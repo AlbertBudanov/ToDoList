@@ -169,10 +169,13 @@
                                 <action selector="sugnOutTapped:" destination="1eJ-ar-cZk" id="D0Q-mQ-EtL"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="BQ3-St-lbc"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="BQ3-St-lbc">
+                            <connections>
+                                <action selector="addTapped:" destination="1eJ-ar-cZk" id="ghG-sA-ztZ"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="addTapped" destination="BQ3-St-lbc" id="Kiw-bX-Uln"/>
                         <outlet property="tableView" destination="KsF-ov-sYB" id="FBI-YJ-oDR"/>
                     </connections>
                 </viewController>
