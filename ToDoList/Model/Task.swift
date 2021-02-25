@@ -11,7 +11,7 @@ import Firebase
 struct Task {
     let title: String
     let userId: String
-    let ref: Firebase.DatabaseReference?
+    let ref: Firebase.DatabaseReference!
     var completed: Bool = false
     
     init(title: String, userId:String) {
@@ -26,5 +26,8 @@ struct Task {
         userId = snapshotValue["userId"] as! String
         completed = snapshotValue["completed"] as! Bool
         ref = snapshot.ref
+    }
+    func convertToDictionary() -> Any {
+       return ["title": title, "userId": userId, "completed": completed]
     }
 }
